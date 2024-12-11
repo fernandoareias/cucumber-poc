@@ -4,8 +4,10 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        plugin = "pretty",
-        monochrome = true
+        plugin = {"pretty", "html:target/report.html"},
+        monochrome = true,
+        snippets = CucumberOptions.SnippetType.CAMELCASE,
+        dryRun = false
 )
 public class Runner {
 }
